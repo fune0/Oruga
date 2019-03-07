@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('summaries.index');
-});
+Route::get('chat', 'ChatController@index');
+Route::get('/ajax/chat_search', 'Ajax\ChatController@search'); //検索
