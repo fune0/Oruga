@@ -10,7 +10,7 @@ class ChatController extends Controller
 
     public function search(Request $request) {//DBから検索
 
-        return \App\Summary::whereSearch($request->word)->get();
+        return \App\Summary::whereSearch($request->word)->first();
 
     }
     

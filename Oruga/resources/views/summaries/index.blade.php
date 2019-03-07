@@ -6,7 +6,7 @@
             <input type="text" v-model="word">&nbsp;
             <button type="button" @click="onClick">要約検索</button>
             <!-- 要約内容 -->
-            <input type="text" v-model="text">
+            <input type="text" v-model="summaryText">
         </div>
         
         
@@ -18,7 +18,7 @@
                 el: '#chat',
                 data: {
                     word: '',
-                    text: ''
+                    summaryText: ''
                 },
                 methods: {
                     onClick: function() {
@@ -29,7 +29,7 @@
 
                         axios.get(url).then((response) => {
 
-                            this.text = response.data.text;
+                            this.summaryText = response.data.text;
 
                         });
 
