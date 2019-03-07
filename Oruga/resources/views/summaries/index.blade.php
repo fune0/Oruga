@@ -21,13 +21,13 @@
                     summaryText: ''
                 },
                 methods: {
-                    onClick: function() {
+                    onClick: function() { //onclickイベント
 
-                        const url = '/ajax/chat_search?'+ [
+                        const url = '/ajax/chat_search?'+ [ //ajax通信 (URL)
                             'word='+ this.word
                         ];
 
-                        axios.get(url).then((response) => {
+                        axios.get(url).then((response) => { //ボタン押されたらデータを返す
 
                             this.summaryText = response.data.text;
 
