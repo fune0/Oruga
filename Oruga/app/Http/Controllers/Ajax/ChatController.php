@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Ajax;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Summary;
 
 class ChatController extends Controller
 {
