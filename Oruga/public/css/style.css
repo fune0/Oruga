@@ -1,0 +1,377 @@
+body, html {body, html {
+ height: 100%;
+ background-color: #363636;
+}
+
+h1, h2, h3, h4, h5, h6, body {
+ font-size: 18px;
+ color: #4a4a4a;
+ font-family: sans-serif;
+ margin: 0;
+ padding: 0;
+}
+
+p {
+ font-size: 16px;
+ color: #4a4a4a;
+ font-family: sans-serif;
+ margin: 16px;
+ padding: 4px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.image{
+  float:left;
+  width: 60px;
+  height: 60px;
+  margin: 0 0 0 -30px;
+}
+
+.block--background {
+  background-color: #363636;
+  width: 100vw;
+  height: 100vh;
+}
+
+.orugabot-area {
+  background-color: #363636;
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: space-between;
+  min-height: 40vh;
+  max-height: 80vh;
+  margin: 0 auto;
+  padding: 16px;
+  padding-bottom: 0;
+}
+
+ul.manual-list li {
+  width: auto;
+  height: auto;
+  position: relative;
+  margin: 0 0 0 50px;
+  padding: 0px 8px;
+  background-color: white;
+  border-radius: 10px;
+}
+ul.manual-list li::after {
+	content: '';
+	position: absolute;
+  display: block;
+	left: 0;
+	top: 15px;
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+	border-right-color: white;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -7.5px;
+	margin-left: -15px;
+}
+
+.user-area {
+  background-color: #363636;
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  align-content: space-between;
+  margin: 0 0 0 auto;
+  padding: 16px;
+}
+
+ul.output-list li {
+  width: auto;
+  height: auto;
+  position: relative;
+  margin: 36px 0;
+  padding: 0px 8px;
+  background-color: #27ae60;
+  border-radius: 10px;
+}
+
+.response-area {
+  background-color: #363636;
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: space-between;
+  min-height: 40vh;
+  max-height: 80vh;
+  margin: 0 0 220px 0;
+  padding: 16px;
+  padding-bottom: 0;
+}
+
+ul.summaries-list li {
+  width: auto;
+  height: auto;
+  position: relative;
+  margin: 0 0 36px 50px;
+  padding: 0px 8px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+ul.summaries-list li::after {
+	content: '';
+	position: absolute;
+  display: block;
+	left: 0;
+	top: 15px;
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+	border-right-color: white;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -7.5px;
+	margin-left: -15px;
+}
+
+@media screen and (max-width: 464px) {
+  #chatform {
+    width: 90%;
+  }
+}
+
+.chatbox-area {
+  background-color: #363636;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  position: fixed;
+}
+
+input[name="word"] {
+  resize: none;
+  border: 2px solid #27ae60;
+  border-right: 0;
+  width: 62%;
+  background-color: transparent;
+  color: #fff;
+  height: 24px;
+  margin: 0 -4px -16px 32px;
+  padding: 8px;
+  border-radius: 8px 0px 0px 8px;
+  font-family: inherit;
+  font-size: 16px;
+}
+input[name="word"]:focus {
+  outline: none;
+  border: 2px solid #4bd786;
+}
+
+input[type="button"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  height: 46px;
+  width: 20%;
+  margin: 0 0 36px 0;
+  padding: 0;
+  background-color: #27ae60;
+  color: #fff;
+  border: 2px solid #27ae60;
+  border-left: 0;
+  border-radius: 0 8px 8px 0;
+  font-family: inherit;
+  font-size: 16px;
+  transition: 200ms all ease-in;
+}
+input[type="button"]:hover {
+  background-color: #4bd786;
+  border-color: #4bd786;
+  color: #fff;
+}
+
+  height: 100%;
+  background-color: #363636;
+}
+
+h1, h2, h3, h4, h5, h6, body {
+  font-size: 18px;
+  color: #4a4a4a;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 16px;
+  color: #4a4a4a;
+  font-family: sans-serif;
+  margin: 16px;
+  padding: 4px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.image {
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin: 0 0 0 -30px;
+}
+
+.orugabot-area {
+  background-color: #363636;
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: space-between;
+  min-height: 40vh;
+  max-height: 80vh;
+  margin: 0 auto;
+  padding: 16px;
+  padding-bottom: 0;
+}
+
+ul.manual-list li {
+  width: auto;
+  height: auto;
+  position: relative;
+  margin: 0 0 0 50px;
+  padding: 0px 8px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+ul.manual-list li::after {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 15px;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-right-color: white;
+  border-left: 0;
+  border-top: 0;
+  margin-top: -7.5px;
+  margin-left: -15px;
+}
+
+.user-area {
+  background-color: #363636;
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  align-content: space-between;
+  margin: 0 0 0 auto;
+  padding: 16px;
+}
+
+ul.output-list li {
+  width: auto;
+  height: auto;
+  position: relative;
+  margin: 36px 0;
+  padding: 0 8px;
+  background-color: #27ae60;
+  border-radius: 10px;
+}
+
+.response-area {
+  background-color: #363636;
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: space-between;
+  min-height: 40vh;
+  max-height: 80vh;
+  margin: 0 0 220px 0;
+  padding: 16px;
+  padding-bottom: 0;
+}
+
+ul.summaries-list li {
+  width: auto;
+  height: auto;
+  position: relative;
+  margin: 0 0 36px 50px;
+  padding: 0px 8px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+ul.summaries-list li::after {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 15px;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-right-color: white;
+  border-left: 0;
+  border-top: 0;
+  margin-top: -7.5px;
+  margin-left: -15px;
+}
+
+@media screen and (max-width: 464px) {
+  #chatform {
+    width: 90%;
+  }
+}
+
+.chatbox-area {
+  background-color: #363636;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  position: fixed;
+}
+
+textarea[name="word"] {
+  resize: none;
+  border: 2px solid #27ae60;
+  border-right: 0;
+  width: 62%;
+  background-color: transparent;
+  color: #fff;
+  height: 24px;
+  margin: 0 -4px -16px 32px;
+  padding: 8px;
+  border-radius: 8px 0px 0px 8px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+textarea[name="word"]:focus {
+  outline: none;
+  border: 2px solid #4bd786;
+}
+
+input[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  height: 46px;
+  width: 20%;
+  margin: 0 0 36px 0;
+  padding: 0;
+  background-color: #27ae60;
+  color: #fff;
+  border: 2px solid #27ae60;
+  border-left: 0;
+  border-radius: 0 8px 8px 0;
+  font-family: inherit;
+  font-size: 16px;
+  transition: 200ms all ease-in;
+}
+
+input[type="submit"]:hover {
+  background-color: #4bd786;
+  border-color: #4bd786;
+  color: #fff;
+}
