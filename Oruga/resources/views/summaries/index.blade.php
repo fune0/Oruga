@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>BotUIサンプル</title>
+    <title>Oruga</title>
     <link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/botui/build/botui-theme-default.css" />
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
 
@@ -18,24 +19,23 @@
 
     <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
     <script src="https://unpkg.com/botui/build/botui.min.js"></script>
-   <!-- <script src="main.js"></script> -->
   </body>
 </html>
 
 <script>
 
-var data = @json($lists);
+data = @json($lists);
 console.log(data);
 
-var genreData = data.filter(function(item, index) {
+/* var genreData = data.filter(function(item, index) {
     if (item.genre == "PHP") return true;
 });
-console.log(genreData);
+console.log(genreData); */
 
-var wordData = genreData.filter(function(item, index){ 
+/* var wordData = genreData.filter(function(item, index){ 
     if (item.word == "Laravel") return true;
 });
-console.log(wordData);
+console.log(wordData); */
 
 const botui = new BotUI('bot');
 
@@ -69,6 +69,11 @@ then(() => {
 
 
 }).then(res => {
+    genreData = data.filter(function(item, index) { //ジャンルデータに絞り込み
+    if (item.genre == res.text) return true;
+});
+console.log(genreData);
+
   return botui.message.bot({
     delay: 400,
     loading: true,
@@ -93,12 +98,18 @@ then(() => {
 
   }).then(res => {
     name = res.value; // ユーザーの入力値
+
+    wordData = genreData.filter(function(item, index){ 
+    if (item.word == name) return true;
+});
+    console.log(wordData);
+
     return botui.message.
     bot({
 
             delay: 300,
             loading: true,
-            content: name + 'はわからないな ! !' 
+            content: wordData[0].text
       });
 
   }).then(function() {
