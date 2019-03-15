@@ -116,44 +116,52 @@
                 content: wordData[0].text
               });
 
-              // キータAPI出力ゾーン
-
-              botui.message.bot({
-                delay: 300,
-                loading: true,
-                content: wordData[1].text
-              });
-
-              // キータAPI出力ゾーン終わり
+              // // キータAPI出力ゾーン
+              //
+              // botui.message.bot({
+              //   delay: 300,
+              //   loading: true,
+              //   content: wordData[1].text
+              // });
+              //
+              // // キータAPI出力ゾーン終わり
 
 
               // ジャンル別３個選出ゾーン
+              var threeWords = choose_at_random();
+
               botui.message.bot({
                 delay: 300,
                 loading: true,
-                content: wordData[1].text
+                content: '他の人はこんな単語を調べています'
               });
 
               botui.message.bot({
                 delay: 300,
                 loading: true,
-                content: wordData[1].text
+                content: threeWords[0]
               });
 
               botui.message.bot({
                 delay: 300,
                 loading: true,
-                content: wordData[1].text
+                content: threeWords[1]
               });
-              // ジャンル別３個選出ゾーン終わり
-
-
-
 
               botui.message.bot({
                 delay: 300,
                 loading: true,
-                content: wordData[0].text
+                content: threeWords[2]
+              // });
+              // // ジャンル別３個選出ゾーン終わり
+              //
+              //
+              //
+              //
+              // botui.message.bot({
+              //   delay: 300,
+              //   loading: true,
+              //   content: wordData[0].text
               }).then(function() {
                 return botui.message.bot({
                 delay: 300,
@@ -192,7 +200,18 @@
       }).then(init);
     }
 
+    function choose_at_random() {
+      var count = 3;
+      var words = [];
+      for (var i = 0; i < count; i++) {
+        // var Input = item.word
+        var aryIndex = genreData[Math.floor(Math.random()*genreData.length)].word;
+        words[i] = aryIndex;
+        // words.splice(Input, 1);
+      }
 
+      return words;
+    }
 
     function end() {
       botui.message.bot({
