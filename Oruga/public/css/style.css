@@ -13,6 +13,12 @@
 	background: transparent;
 }
 
+
+.botui-app-container{
+  width: 100%;
+}
+
+
 .human.botui-message-content.text {
 	background: white;
 	color: rgb(0, 0, 0);
@@ -84,6 +90,7 @@ body {
   font-family: 'Montserrat';
   background-color:  rgb(0, 0, 0);
   color: #FFFFFF;
+
 }
 
 header {
@@ -113,5 +120,5 @@ header {
 }
 
 .bot-wrapper {
-	margin: 0 25%;
+	margin: 0 50%;
 }
