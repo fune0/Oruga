@@ -111,9 +111,49 @@
             }else{
 
               botui.message.bot({
-                      delay: 300,
-                      loading: true,
-                      content: wordData[0].text
+                delay: 300,
+                loading: true,
+                content: wordData[0].text
+              });
+
+              // キータAPI出力ゾーン
+
+              botui.message.bot({
+                delay: 300,
+                loading: true,
+                content: wordData[1].text
+              });
+
+              // キータAPI出力ゾーン終わり
+
+
+              // ジャンル別３個選出ゾーン
+              botui.message.bot({
+                delay: 300,
+                loading: true,
+                content: wordData[1].text
+              });
+
+              botui.message.bot({
+                delay: 300,
+                loading: true,
+                content: wordData[1].text
+              });
+
+              botui.message.bot({
+                delay: 300,
+                loading: true,
+                content: wordData[1].text
+              });
+              // ジャンル別３個選出ゾーン終わり
+
+
+
+
+              botui.message.bot({
+                delay: 300,
+                loading: true,
+                content: wordData[0].text
               }).then(function() {
                 return botui.message.bot({
                 delay: 300,
