@@ -21,29 +21,22 @@
    <script src="https://unpkg.com/botui/build/botui.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
    <script>
-
    data = @json($lists);
    console.log(data);
-
    /* var genreData = data.filter(function(item, index) {
        if (item.genre == “PHP”) return true;
    });
    console.log(genreData); */
-
    /* var wordData = genreData.filter(function(item, index){
        if (item.word == “Laravel”) return true;
    });
    console.log(wordData); */
-
    const botui = new BotUI('bot');
-
    botui.message.bot({
      delay: 200,
      content: 'こんにちは！ Orugaだよ！',
      loading: true
    }).then(init);
-
-
    function init(){
      botui.message.bot({
        delay: 800,
@@ -104,59 +97,53 @@
              if(item.word == name) return true;
            });
            console.log(wordData);
-
            if (wordData[0] == null){
-
              falseword();
-
            }else{
-
              botui.message.bot({
                delay: 300,
                loading: true,
                content: wordData[0].text
              });
 
-             // // キータAPI出力ゾーン
-             qiitaApi();
-             // // キータAPI出力ゾーン終わり
+             // キータAPI出力ゾーン
+             var params = { page:1, per_page: 1, query: name };
+              axios.get('https://qiita.com/api/v2/items', {params})
+              .then(response => {
+                    // console.log('status:', response.status);
+                    console.log('body:', response.data);
 
+                    botui.message.bot({
+                      delay: 300,
+                      loading: true,
+                      content: response.data
+                    });
+               });
+             // キータAPI出力ゾーン終わり
 
              // ジャンル別３個選出ゾーン
              var threeWords = choose_at_random();
-
              botui.message.bot({
                delay: 300,
                loading: true,
                content: '他の人はこんな単語を調べています'
              });
-
              botui.message.bot({
                delay: 300,
                loading: true,
                content: threeWords[0]
              });
-
              botui.message.bot({
                delay: 300,
                loading: true,
                content: threeWords[1]
              });
-
              botui.message.bot({
                delay: 300,
                loading: true,
                content: threeWords[2]
-             // });
-             // // ジャンル別３個選出ゾーン終わり
-             //
-             //
-             //
-             //
-             // botui.message.bot({
-             //   delay: 300,
-             //   loading: true,
-             //   content: wordData[0].text
+             // ジャンル別３個選出ゾーン終わり
+             
              }).then(function() {
                return botui.message.bot({
                delay: 300,
@@ -184,9 +171,6 @@
        });
      });
    }
-
-
-
    function falseword() {
      botui.message.bot({
        delay: 200,
@@ -194,7 +178,6 @@
        loading: true
      }).then(init);
    }
-
    function choose_at_random() {
      var count = 3;
      var words = [];
@@ -204,22 +187,17 @@
        words[i] = aryIndex;
        // words.splice(Input, 1);
      }
-
      return words;
    }
-
-  function qiitaApi() {
-    var params = { page:1, per_page: 1, query: name };
-            axios.get('https://qiita.com/api/v2/items', {params})
-            .then(function(response){
-                    console.log(response);
-                    botui.message.bot({
-                    delay: 300,
-                    loading: true,
-                    content: response.data.url
-              });
-            });
-  }
+  // function qiitaApi(name) {
+  //   var items = null
+  //   var params = { page:1, per_page: 1, query: name };
+  //     axios.get('https://qiita.com/api/v2/items', {params})
+  //     .then((response) => {
+  //           console.log(response);
+  //           this.items = response.data.url;
+  //       });
+  //     }
 
    function end() {
      botui.message.bot({
@@ -228,9 +206,6 @@
        loading: true
      });
    }
-
-
-
    </script>
  </body>
 </html>
