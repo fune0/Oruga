@@ -116,7 +116,7 @@
                     botui.message.bot({
                       delay: 300,
                       loading: true,
-                      content: response.data
+                      content: response.data[0].url
                     });
                });
              // キータAPI出力ゾーン終わり
